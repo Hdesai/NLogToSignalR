@@ -25,17 +25,17 @@ namespace Nlog.Targets.SignalR.ConsoleSample
                 {
                     break;
                 }
-                if (consolKey.Key == ConsoleKey.NumPad1)
+                if (consolKey.Key == ConsoleKey.NumPad1 || consolKey.Key==ConsoleKey.D1)
                 {
                     test.Do(1);
                 }
 
-                if (consolKey.Key==ConsoleKey.NumPad2)
+                if (consolKey.Key == ConsoleKey.NumPad2 || consolKey.Key == ConsoleKey.D2)
                 {
                     test.Do(2);
                 }
 
-                if (consolKey.Key==ConsoleKey.NumPad3)
+                if (consolKey.Key == ConsoleKey.NumPad3 || consolKey.Key == ConsoleKey.D3)
                 {
                     test.Do(3);
                 }
