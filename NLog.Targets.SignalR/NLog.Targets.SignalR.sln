@@ -17,7 +17,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLog.Targets.SignalR.Tests"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D7304753-00C3-4A3D-8267-6AB172EAA396}"
 	ProjectSection(SolutionItems) = preProject
-		..\README.MD = ..\README.MD
+		..\..\..\..\..\Users\a2d\Desktop\Readme.md = ..\..\..\..\..\Users\a2d\Desktop\Readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A192E3C6-8E3F-41F8-945D-02683D9D2073}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
 Global
