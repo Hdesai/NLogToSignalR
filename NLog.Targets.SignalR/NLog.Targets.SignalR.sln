@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLog.Targets.SignalR", "NLog.Targets.SignalR.csproj", "{0330E25B-BB66-47F2-8F81-932B46F4246D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nlog.Targets.SignalR.ConsoleSample", "..\Nlog.Targets.SignalR.ConsoleSample\Nlog.Targets.SignalR.ConsoleSample.csproj", "{0963547B-C278-455B-A656-5F96E7324F05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLog.Targets.SignalR.Server", "..\NLog.Targets.SignalR.Server\NLog.Targets.SignalR.Server.csproj", "{CA94E176-9C92-4887-9F9C-C798883BD9D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLog.Targets.SignalR.AspNetServer", "NLog.Targets.SignalR.AspNetServer\NLog.Targets.SignalR.AspNetServer.csproj", "{A377804B-36AE-41E7-AEFB-5C41F6B0ABA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{17051141-C62A-48EE-A761-AD1D595BE74B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{C31AD11F-A343-45C5-A692-E611BCAF6B83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLog.Targets.SignalR.Tests", "..\NLog.Targets.SignalR.Tests\NLog.Targets.SignalR.Tests.csproj", "{AB091EA2-F7A2-4ECA-A6A2-237E199BBA93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0330E25B-BB66-47F2-8F81-932B46F4246D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0330E25B-BB66-47F2-8F81-932B46F4246D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0330E25B-BB66-47F2-8F81-932B46F4246D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0330E25B-BB66-47F2-8F81-932B46F4246D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0963547B-C278-455B-A656-5F96E7324F05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0963547B-C278-455B-A656-5F96E7324F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0963547B-C278-455B-A656-5F96E7324F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0963547B-C278-455B-A656-5F96E7324F05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA94E176-9C92-4887-9F9C-C798883BD9D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA94E176-9C92-4887-9F9C-C798883BD9D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA94E176-9C92-4887-9F9C-C798883BD9D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA94E176-9C92-4887-9F9C-C798883BD9D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A377804B-36AE-41E7-AEFB-5C41F6B0ABA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A377804B-36AE-41E7-AEFB-5C41F6B0ABA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A377804B-36AE-41E7-AEFB-5C41F6B0ABA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A377804B-36AE-41E7-AEFB-5C41F6B0ABA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB091EA2-F7A2-4ECA-A6A2-237E199BBA93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB091EA2-F7A2-4ECA-A6A2-237E199BBA93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB091EA2-F7A2-4ECA-A6A2-237E199BBA93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB091EA2-F7A2-4ECA-A6A2-237E199BBA93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0963547B-C278-455B-A656-5F96E7324F05} = {17051141-C62A-48EE-A761-AD1D595BE74B}
+		{A377804B-36AE-41E7-AEFB-5C41F6B0ABA0} = {C31AD11F-A343-45C5-A692-E611BCAF6B83}
+		{CA94E176-9C92-4887-9F9C-C798883BD9D0} = {C31AD11F-A343-45C5-A692-E611BCAF6B83}
+	EndGlobalSection
+EndGlobal
