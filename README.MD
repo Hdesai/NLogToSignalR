@@ -1,6 +1,6 @@
 # NLogToSignalR
 **NLogToSignalR** is a NLog target for delivering NLog notification via SignalR framework in form of notification. It supports both PersistentConnection and Hub to deliver notification. 
-
+ 
 ## Current Version
 Alpha.
 
