@@ -29,9 +29,7 @@ Code can be found at https://github.com/Hdesai/NLogToSignalR
 3. Deploy the Server (NLog.Targets.SignalR.AspNetServer) on local IIS.
 
 4. Browse the website after deployment and start logging!
-
-        // Display an info toast with no title
-        toastr.info('Are you the 6 fingered man?')
+        
 
 ## Authors
 
