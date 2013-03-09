@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using SignalR.Hubs;
+using Microsoft.AspNet.SignalR;
+using Microsoft.AspNet.SignalR.Hubs;
+
 
 namespace NLog.Targets.SignalR.AspNetServer.SignalR.MessengerHub
 {
@@ -23,7 +25,7 @@ namespace NLog.Targets.SignalR.AspNetServer.SignalR.MessengerHub
 
         public void AddToGroup(string group)
         {
-            this.Groups.Add(Context.ConnectionId, group);
+            Groups.Add(Context.ConnectionId, group);
         }
 
         /// <summary>
@@ -42,7 +44,8 @@ namespace NLog.Targets.SignalR.AspNetServer.SignalR.MessengerHub
         /// <param name="group"> </param>
         public void BroadCastMessage(Object message, string group)
         {
-            _messenger.BroadCastMessage(message, group);
+            //_messenger.BroadCastMessage(message, group);
+            Clients.All.broadcastMessage(message);
         }
     }
 }

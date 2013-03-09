@@ -1,7 +1,8 @@
 using System;
 using System.Threading;
-using SignalR.Client;
-using SignalR.Hosting.Self;
+using Microsoft.AspNet.SignalR.Client;
+using Owin;
+using Microsoft.Owin.Hosting;
 
 namespace Nlog.Targets.SignalR.ConsoleSample
 {
@@ -11,9 +12,10 @@ namespace Nlog.Targets.SignalR.ConsoleSample
         {
             const string url = "http://localhost:8081/";
 
-            var server = new Server(url);
-            server.MapConnection<MyConnection>("/echo");
-            server.Start();
+            var server=WebApplication.Start<MyConnection>(url + "/echo");
+            
+            
+
             Console.WriteLine("Server running on {0}", url);
 
             var connection = new Connection("http://localhost:8081/echo");
@@ -48,6 +50,9 @@ namespace Nlog.Targets.SignalR.ConsoleSample
                         }
                     }
                 }));
+
+            Console.ReadLine();
+            server.Dispose();
         }
     }
 }

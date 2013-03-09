@@ -166,11 +166,29 @@
     }
 }
 
-@media all and (min-width: 769px)
+@media all and (min-width: 769px) and (max-width: 1024px)
 {
     #toast-container > div
     {
         padding: 15px 15px 15px 50px;
-        width: 300px;
+        width: 800px;
+    }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1440px)
+{
+    #toast-container > div
+    {
+        padding: 15px 15px 15px 50px;
+        width: 1280px;
+    }
+}
+
+@media all and (min-width: 1440px) 
+{
+    #toast-container > div
+    {
+        padding: 15px 15px 15px 50px;
+        width: 1440px;
     }
 }

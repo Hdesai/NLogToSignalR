@@ -1,6 +1,6 @@
 using System;
 using System.Diagnostics;
-using SignalR.Client;
+using Microsoft.AspNet.SignalR.Client;
 
 namespace NLog.Targets.SignalR
 {

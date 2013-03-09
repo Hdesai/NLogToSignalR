@@ -1,6 +1,7 @@
 using System;
-using SignalR.Client;
-using SignalR.Client.Hubs;
+using Microsoft.AspNet.SignalR.Client;
+using Microsoft.AspNet.SignalR.Client.Hubs;
+
 
 namespace NLog.Targets.SignalR
 {
@@ -23,7 +24,7 @@ namespace NLog.Targets.SignalR
         public void Connect()
         {
             var connection = new HubConnection(_uri);
-            _hubProxy = connection.CreateProxy(_hubName);
+            _hubProxy = connection.CreateHubProxy(_hubName);
             connection.Start().Wait();
             if (connection.State != ConnectionState.Connected)
             {

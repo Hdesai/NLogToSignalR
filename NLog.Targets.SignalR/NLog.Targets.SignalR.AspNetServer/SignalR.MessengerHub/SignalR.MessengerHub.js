@@ -3,8 +3,9 @@
     
 
     function init() {
-        messenger.addToGroup("sourcing");
-        return messenger.getAllMessages().done(function (message) {
+        alert("init");
+        messenger.server.addToGroup("sourcing");
+        return messenger.server.getAllMessages().done(function (message) {
             // Process Message Indivudally if Necessary
             
         });
@@ -16,11 +17,11 @@
         toastr.info("Messenging System Started");
     };
 
-    messenger.add = function (message) {
+    messenger.client.broadcastMessage = function (message) {
        /* $.jGrowl(message.Content, { header: message.Title, sticky: false });*/
         //jGrowlTheme('mono', '<span class="' + "message" + '">' + message.Title + "</span>", '<span class="' + "message" + '">' + message.Content + "</span>", 'images/angryjohn.jpg');
         //http://www.webstuffshare.com/demo/jGrowl-Theme/images/messi.jpg
-     
+        
         if (message.IsWarning) {
             toastr.warning(message.Content);
         }
@@ -40,6 +41,7 @@
     // Start the Connection
     $.connection.hub.start(function () {
         init().done(function () {
+            alert("initializing");
             messenger.begin();
 
         });

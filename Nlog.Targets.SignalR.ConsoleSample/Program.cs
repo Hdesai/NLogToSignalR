@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NLog;
-using SignalR.Client.Http;
-using SignalR.Client.Transports;
+
 
 namespace Nlog.Targets.SignalR.ConsoleSample
 {
@@ -25,7 +24,7 @@ namespace Nlog.Targets.SignalR.ConsoleSample
                 {
                     break;
                 }
-                if (consolKey.Key == ConsoleKey.NumPad1 || consolKey.Key==ConsoleKey.D1)
+                if (consolKey.Key == ConsoleKey.NumPad1 || consolKey.Key == ConsoleKey.D1)
                 {
                     test.Do(1);
                 }

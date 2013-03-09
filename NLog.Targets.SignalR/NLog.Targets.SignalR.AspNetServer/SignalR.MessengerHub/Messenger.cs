@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
-using SignalR;
+using Microsoft.AspNet.SignalR;
+
 
 namespace NLog.Targets.SignalR.AspNetServer.SignalR.MessengerHub
 {
@@ -51,7 +52,8 @@ namespace NLog.Targets.SignalR.AspNetServer.SignalR.MessengerHub
         private static dynamic GetClients(string group)
         {
             var context = GlobalHost.ConnectionManager.GetHubContext<MessengerHub>();
-            return context.Clients[group];
+            //return context.Clients[group];
+            return context.Clients.Group(group);
         }   
 
 

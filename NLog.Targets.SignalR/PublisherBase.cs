@@ -1,25 +1,24 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
-using SignalR.Client;
+using Microsoft.AspNet.SignalR.Client;
 
 namespace NLog.Targets.SignalR
 {
     public abstract class PublisherBase
     {
+        protected readonly ConcurrentQueue<Action> FunctionsToExecute = new ConcurrentQueue<Action>();
+        protected Connection PersistentConnection;
         private bool _isConnected;
+
         protected bool IsConnected
         {
             get { return _isConnected; }
 
             set { _isConnected = value; }
         }
-
-        protected Connection PersistentConnection;
-        protected readonly ConcurrentQueue<Action> FunctionsToExecute = new ConcurrentQueue<Action>();
 
         protected void StartProcessing()
         {
@@ -38,14 +37,13 @@ namespace NLog.Targets.SignalR
             if (!_isConnected)
             {
                 //If it is not connected-queue the Message
-                FunctionsToExecute.Enqueue(() => SendTheMessageToRemoteHost(logLevel, new[] { message }));
+                FunctionsToExecute.Enqueue(() => SendTheMessageToRemoteHost(logLevel, new[] {message}));
             }
             else
             {
                 //Just send the message to remote host
-                SendTheMessageToRemoteHost(logLevel,new[]{message});
+                SendTheMessageToRemoteHost(logLevel, new[] {message});
             }
-
         }
 
         protected void SendTheMessageToRemoteHost(LogLevel level, IEnumerable<string> messages)
@@ -60,7 +58,7 @@ namespace NLog.Targets.SignalR
 
                     string allTexts = builder.ToString();
 
-                    var signalRMessage = new Message { Title = level.Name, Content = allTexts };
+                    var signalRMessage = new Message {Title = level.Name, Content = allTexts};
 
                     if (level == LogLevel.Info)
                     {
@@ -84,5 +82,5 @@ namespace NLog.Targets.SignalR
         }
 
         protected abstract void SendToSignalR(Message message);
-   }
+    }
 }
