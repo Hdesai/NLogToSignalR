@@ -45,7 +45,8 @@ namespace NLog.Targets.SignalR.AspNetServer.SignalR.MessengerHub
         public void BroadCastMessage(Object message, string group)
         {
             //_messenger.BroadCastMessage(message, group);
-            Clients.All.broadcastMessage(message);
+            //Clients.All.broadcastMessage(message);
+            this.Clients.Group(group).broadcastMessage(message);
         }
     }
 }

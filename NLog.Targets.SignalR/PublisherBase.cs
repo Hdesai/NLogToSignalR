@@ -3,24 +3,25 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNet.SignalR.Client;
 
 namespace NLog.Targets.SignalR
 {
     public abstract class PublisherBase
     {
         protected readonly ConcurrentQueue<Action> FunctionsToExecute = new ConcurrentQueue<Action>();
-        protected Connection PersistentConnection;
+
         private bool _isConnected;
 
-        protected bool IsConnected
+        public bool SentToSignalR { get; protected set; }
+
+        public bool IsConnected
         {
             get { return _isConnected; }
 
             set { _isConnected = value; }
         }
 
-        protected void StartProcessing()
+        protected virtual void StartProcessing()
         {
             while (FunctionsToExecute.Count > 0)
             {
@@ -46,7 +47,7 @@ namespace NLog.Targets.SignalR
             }
         }
 
-        protected void SendTheMessageToRemoteHost(LogLevel level, IEnumerable<string> messages)
+        protected virtual Task GetSendTheMessageToRemoteHostTask(LogLevel level, IEnumerable<string> messages)
         {
             var task = new Task(() =>
                 {
@@ -77,6 +78,13 @@ namespace NLog.Targets.SignalR
 
                     SendToSignalR(signalRMessage);
                 });
+
+            return task;
+        }
+
+        protected virtual void SendTheMessageToRemoteHost(LogLevel level, IEnumerable<string> messages)
+        {
+            Task task = GetSendTheMessageToRemoteHostTask(level, messages);
 
             task.Start();
         }

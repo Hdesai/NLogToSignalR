@@ -53,9 +53,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmptyTarget.cs" />
+    <Compile Include="HubConnectionProxy.cs" />
+    <Compile Include="IConnectionProxy.cs" />
+    <Compile Include="IHubConnectionProxy.cs" />
     <Compile Include="IPublishToSignalR.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="NLogToSignalRTargetException.cs" />
+    <Compile Include="ConnectionProxy.cs" />
     <Compile Include="PersistentConnectionPublisher.cs" />
     <Compile Include="PublisherBase.cs" />
     <Compile Include="PublishToHub.cs" />

@@ -1,54 +1,63 @@
 using System;
 using System.Diagnostics;
 using Microsoft.AspNet.SignalR.Client;
+using Microsoft.AspNet.SignalR.Client.Http;
 
 namespace NLog.Targets.SignalR
 {
-    public class PersistentConnectionPublisher: PublisherBase, IPublishToSignalR
+    public class PersistentConnectionPublisher : PublisherBase, IPublishToSignalR
     {
-        public PersistentConnectionPublisher(Connection persistentConnection)
+        private readonly IConnectionProxy _connectionProxy;
+
+        public PersistentConnectionPublisher(IConnectionProxy connectionProxy)
         {
-            PersistentConnection = persistentConnection;
+            _connectionProxy = connectionProxy;
         }
 
 
-        public virtual void Connect()
+        public virtual void Connect(IHttpClient httpClient)
         {
-            PersistentConnection.Start().ContinueWith(task =>
+            _connectionProxy.StartConnection(httpClient).ContinueWith(task =>
+                {
+                    if ((!task.IsFaulted))
+                    {
+                        Trace.WriteLine(String.Format("Success! Connected with client connectionProxy id {0}",
+                                                      _connectionProxy.ConnectionId));
+
+                        IsConnected = true;
+                        //Sending test data
+                        StartProcessing();
+                    }
+                    else
+                    {
+                        if (task.Exception != null)
+                            Trace.WriteLine(String.Format("Failed to start: {0}", task.Exception.GetBaseException()));
+                    }
+                }).Wait();
+
+            if (_connectionProxy.State != ConnectionState.Connected)
             {
-                if (task.IsFaulted)
-                {
-                    if (task.Exception != null)
-                        Trace.WriteLine(String.Format("Failed to start: {0}", task.Exception.GetBaseException()));
-                }
-                else
-                {
-                    Trace.WriteLine(String.Format("Success! Connected with client connection id {0}", PersistentConnection.ConnectionId));
-                    
-                    IsConnected = true;
-                    //Sending test data
-                    StartProcessing();
-                    
-                }
-            });
+                Trace.WriteLine(String.Format("Failed to connect"));
+            }
         }
 
 
         protected override void SendToSignalR(Message message)
         {
-            //persistent connection
-            PersistentConnection.Send(message.Content).ContinueWith(task =>
-            {
-                if (task.IsFaulted)
+            //persistent connectionProxy
+            _connectionProxy.Send(message.Content).ContinueWith(task =>
                 {
-                    if (task.Exception != null)
-                        Trace.WriteLine(String.Format("Send failed {0}", task.Exception.GetBaseException()));
-                }
-                else
-                {
-                    Trace.WriteLine("Success");
-                }
-            });
+                    if (task.IsFaulted)
+                    {
+                        if (task.Exception != null)
+                            Trace.WriteLine(String.Format("Send failed {0}", task.Exception.GetBaseException()));
+                    }
+                    else
+                    {
+                        SentToSignalR = true;
+                        Trace.WriteLine("Success");
+                    }
+                }).Wait();
         }
     }
 }

@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="content\toastr.css" />
+    <Content Include="content\toastr.min.css" />
     <Content Include="Default.aspx" />
     <None Include="Properties\PublishProfiles\Dev.pubxml" />
     <Content Include="Global.asax" />
@@ -94,6 +95,7 @@
     <Content Include="Scripts\jquery.signalR-1.0.0.js" />
     <Content Include="Scripts\jquery.signalR-1.0.0.min.js" />
     <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="SignalR.MessengerHub\SignalR.MessengerHub.js" />
     <Content Include="ToastrExample.html" />
     <Content Include="Web.config" />
