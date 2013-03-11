@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR;
+using Owin;
 
 namespace NLog.Targets.SignalR.SelfHostServer
 {
@@ -38,5 +39,18 @@ namespace NLog.Targets.SignalR.SelfHostServer
             Groups.Send(GroupName, data);
             return base.OnReceived(request, connectionId, data);
         }
+    }
+
+    class Startup
+    {
+        public void Configuration(IAppBuilder app)
+        {
+            // Turn cross domain on 
+            var config = new ConnectionConfiguration {EnableCrossDomain = true};
+
+            // This will map out to http://localhost:8080/signalr by default
+            app.MapConnection<MyServerConnection>("/messaging", config);
+        }
+
     }
 }
