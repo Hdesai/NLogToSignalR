@@ -184,21 +184,12 @@
     }
 }
 
-@media all and (min-width: 1440px) and (max-width: 2048px)
+@media all and (min-width: 1440px) 
 {
     #toast-container > div
     {
         padding: 15px 15px 15px 50px;
-        width: 1280px;
+        width: 1350px;
     }
 }
 
-
-@media all and (min-width: 2048px) 
-{
-    #toast-container > div
-    {
-        padding: 15px 15px 15px 50px;
-        width: 1280px;
-    }
-}
