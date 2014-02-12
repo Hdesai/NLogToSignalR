@@ -45,11 +45,30 @@ namespace NLog.Targets.SignalR.SelfHostServer
     {
         public void Configuration(IAppBuilder app)
         {
-            // Turn cross domain on 
-            var config = new ConnectionConfiguration {EnableCrossDomain = true};
+            //// Turn cross domain on 
+            var config = new ConnectionConfiguration {EnableJSONP = true};
 
-            // This will map out to http://localhost:8080/signalr by default
-            app.MapConnection<MyServerConnection>("/messaging", config);
+            //// This will map out to http://localhost:8080/signalr by default
+            ////app.MapConnection<MyServerConnection>("/messaging", config);
+
+            //app.Map("/messaging", map =>
+            //{
+            //    //.UseCors(CorsOptions.AllowAll);
+            //    var hubConfiguration = new HubConfiguration
+            //    {
+            //        // You can enable JSONP by uncommenting line below.
+            //        // JSONP requests are insecure but some older browsers (and some
+            //        // versions of IE) require JSONP to work cross domain
+            //        // EnableJSONP = true
+            //    };
+            //    // Run the SignalR pipeline. We're not using MapSignalR
+            //    // since this branch already runs under the "/signalr"
+            //    // path.
+            //    map.RunSignalR(hubConfiguration);
+            //});
+            app.MapSignalR<MyServerConnection>("/messaging", config);
+
+
         }
 
     }

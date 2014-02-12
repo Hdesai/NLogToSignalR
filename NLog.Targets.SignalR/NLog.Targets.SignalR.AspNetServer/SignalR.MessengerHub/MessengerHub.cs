@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 
@@ -23,6 +24,11 @@ namespace NLog.Targets.SignalR.AspNetServer.SignalR.MessengerHub
 
         }
 
+        public void Heartbeat(string fromWho)
+        {
+            Debug.WriteLine(fromWho);
+        }
+
         public void AddToGroup(string group)
         {
             Groups.Add(Context.ConnectionId, group);
@@ -42,11 +48,12 @@ namespace NLog.Targets.SignalR.AspNetServer.SignalR.MessengerHub
         /// </summary>
         /// <param name="message">The message.</param>
         /// <param name="group"> </param>
-        public void BroadCastMessage(Object message, string group)
+        public void BroadCastMessage(dynamic message, string group)
         {
-            //_messenger.BroadCastMessage(message, group);
-            //Clients.All.broadcastMessage(message);
-            this.Clients.Group(group).broadcastMessage(message);
+            _messenger.BroadCastMessage(message,group);
+            //Clients.Groups(new List<string>(){group}).broadcastMessage(group, message);
+            //Clients.All.broadcastMessage("some name", message);
+
         }
     }
 }

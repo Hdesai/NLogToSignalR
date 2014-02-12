@@ -12,7 +12,7 @@ namespace Nlog.Targets.SignalR.ConsoleSample
         {
             const string url = "http://localhost:8081/";
 
-            var server=WebApplication.Start<MyConnection>(url + "/echo");
+            //var server=WebApplication.Start<MyConnection>(url + "/echo");
             
             
 
@@ -52,7 +52,7 @@ namespace Nlog.Targets.SignalR.ConsoleSample
                 }));
 
             Console.ReadLine();
-            server.Dispose();
+            //server.Dispose();
         }
     }
 }

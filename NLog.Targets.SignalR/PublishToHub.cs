@@ -11,7 +11,6 @@ namespace NLog.Targets.SignalR
         private readonly string _groupName;
         private readonly string _methodToCallOnServer;
         protected IHubProxy _hubProxy;
-        private readonly string _uri;
         private readonly string _hubName;
 
         private readonly IHubConnectionProxy _hubConnectionProxy;

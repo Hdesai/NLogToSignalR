@@ -6,10 +6,11 @@
 <head runat="server">
     <title></title>
     <link href="content/toastr.css" rel="stylesheet"/>
-    <script src="Scripts/jquery-1.9.1.js" type="text/javascript"></script>
-    <script src="Scripts/jquery.signalR-1.0.0.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-2.0.3.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.signalR-2.0.1.min.js" type="text/javascript"></script>
     <script src="Scripts/toastr.js" type="text/javascript"></script>
     <script src='<%=ResolveClientUrl("~/signalr/hubs") %>' type="text/javascript"></script>
+   
     <script src="SignalR.MessengerHub/SignalR.MessengerHub.js" type="text/javascript"></script>
     <style type="text/css">.resize { height: 100%;width:100% }</style>
 </head>

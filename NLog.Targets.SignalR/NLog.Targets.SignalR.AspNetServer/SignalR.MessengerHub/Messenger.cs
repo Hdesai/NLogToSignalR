@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
+using System.Web.UI;
 using Microsoft.AspNet.SignalR;
-
+L
 
 namespace NLog.Targets.SignalR.AspNetServer.SignalR.MessengerHub
 {
@@ -40,9 +41,10 @@ namespace NLog.Targets.SignalR.AspNetServer.SignalR.MessengerHub
         /// Broads the cast message.
         /// </summary>
         /// <param name="message">The message.</param>
-        public void BroadCastMessage(Object message, string group)
+        public void BroadCastMessage(dynamic message, string group)
         {
-            GetClients(group).add(message);
+            //GetClients(group).add(message);
+            GetClients(group).broadcastMessage(group, message);
         }
 
         /// <summary>
@@ -54,6 +56,7 @@ namespace NLog.Targets.SignalR.AspNetServer.SignalR.MessengerHub
             var context = GlobalHost.ConnectionManager.GetHubContext<MessengerHub>();
             //return context.Clients[group];
             return context.Clients.Group(group);
+           
         }   
 
 

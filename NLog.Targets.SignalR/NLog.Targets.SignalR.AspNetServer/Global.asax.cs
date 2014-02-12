@@ -14,7 +14,7 @@ namespace NLog.Targets.SignalR.AspNetServer
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            RouteTable.Routes.MapHubs();
+            
         }
 
         protected void Session_Start(object sender, EventArgs e)

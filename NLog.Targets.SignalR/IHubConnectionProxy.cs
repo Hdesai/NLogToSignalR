@@ -1,3 +1,4 @@
+using Microsoft.AspNet.SignalR.Client;
 using Microsoft.AspNet.SignalR.Client.Hubs;
 
 namespace NLog.Targets.SignalR
