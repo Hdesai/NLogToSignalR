@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Concurrent;
 using System.Web.UI;
 using Microsoft.AspNet.SignalR;
-L
+
 
 namespace NLog.Targets.SignalR.AspNetServer.SignalR.MessengerHub
 {
