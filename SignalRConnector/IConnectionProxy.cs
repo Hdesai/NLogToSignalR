@@ -3,7 +3,7 @@ using Microsoft.AspNet.SignalR.Client;
 using Microsoft.AspNet.SignalR.Client.Http;
 using Microsoft.AspNet.SignalR.Client.Transports;
 
-namespace NLog.Targets.SignalR
+namespace SignalRConnector
 {
     public interface IConnectionProxy:IConnection
     {

@@ -1,4 +1,4 @@
-namespace NLog.Targets.SignalR
+namespace SignalRConnector
 {
     public class Message
     {

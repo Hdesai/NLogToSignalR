@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using SignalRConnector;
 
 namespace NLog.Targets.SignalR.Tests
 {
@@ -37,14 +38,14 @@ namespace NLog.Targets.SignalR.Tests
             HasProcessingStarted = true;
         }
 
-        protected override void SendTheMessageToRemoteHost(LogLevel level, System.Collections.Generic.IEnumerable<string> messages)
+        protected override void SendTheMessageToRemoteHost(SignalRConnector.LogLevel level, System.Collections.Generic.IEnumerable<string> messages)
         {
             base.SendTheMessageToRemoteHost(level, messages);
             HasMessageToRemoteHostSent = true;
 
         }
 
-        public void Execute_SendTheMessageToRemoteHost(LogLevel level,
+        public void Execute_SendTheMessageToRemoteHost(SignalRConnector.LogLevel level,
                                                        IEnumerable<string> messages)
         {
             var task=this.GetSendTheMessageToRemoteHostTask(level,messages);

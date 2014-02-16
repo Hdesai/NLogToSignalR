@@ -2,6 +2,7 @@
 using Microsoft.AspNet.SignalR.Client.Http;
 using NLog.Common;
 using NLog.Config;
+using SignalRConnector;
 
 namespace NLog.Targets.SignalR
 {
@@ -72,7 +73,32 @@ namespace NLog.Targets.SignalR
 
             string asyncBody = Layout.Render(logEvent.LogEvent);
 
-            PublishToSignalR.WriteToQueue(logEvent.LogEvent.Level, asyncBody);
+            PublishToSignalR.WriteToQueue(GetFromNLogLogLevel(logEvent.LogEvent.Level), asyncBody);
+        }
+
+        private SignalRConnector.LogLevel GetFromNLogLogLevel(NLog.LogLevel logLevel)
+        {
+            if (logLevel==NLog.LogLevel.Info)
+            {
+                return SignalRConnector.LogLevel.Info;
+            }
+
+            if (logLevel == NLog.LogLevel.Warn)
+            {
+                return SignalRConnector.LogLevel.Warn;
+            }
+
+            if (logLevel == NLog.LogLevel.Error)
+            {
+                return SignalRConnector.LogLevel.Error;
+            }
+
+            if (logLevel == NLog.LogLevel.Debug)
+            {
+                return SignalRConnector.LogLevel.Debug;
+            }
+
+            throw new ArgumentOutOfRangeException("logLevel");
         }
     }
 }

@@ -10,7 +10,7 @@ namespace NLog.Targets.SignalR.Tests
         {
             var publisher = new FakePublisher();
             publisher.SetDisconnected();
-            publisher.WriteToQueue(LogLevel.Debug, "Some Message");
+            publisher.WriteToQueue(SignalRConnector.LogLevel.Debug, "Some Message");
 
             Assert.IsTrue(publisher.NumberOfFunctionsToExecute == 1);
         }
@@ -20,7 +20,7 @@ namespace NLog.Targets.SignalR.Tests
         {
             var publisher = new FakePublisher();
             publisher.SetConnected();
-            publisher.WriteToQueue(LogLevel.Debug, "Some Message");
+            publisher.WriteToQueue(SignalRConnector.LogLevel.Debug, "Some Message");
 
             Assert.IsTrue(publisher.NumberOfFunctionsToExecute == 0);
         }
@@ -30,7 +30,7 @@ namespace NLog.Targets.SignalR.Tests
         {
             var publisher = new FakePublisher();
             publisher.SetConnected();
-            publisher.Execute_SendTheMessageToRemoteHost(LogLevel.Debug, new[] {"Some Message"});
+            publisher.Execute_SendTheMessageToRemoteHost(SignalRConnector.LogLevel.Debug, new[] {"Some Message"});
             Assert.IsTrue(publisher.HasSignalSent);
         }
 
@@ -39,10 +39,10 @@ namespace NLog.Targets.SignalR.Tests
         {
             var publisher = new FakePublisher();
             publisher.SetDisconnected();
-            publisher.WriteToQueue(LogLevel.Debug, "Some Message");
-            publisher.WriteToQueue(LogLevel.Error, "Some Message");
-            publisher.WriteToQueue(LogLevel.Warn, "Some Message");
-            publisher.WriteToQueue(LogLevel.Info, "Some Message");
+            publisher.WriteToQueue(SignalRConnector.LogLevel.Debug, "Some Message");
+            publisher.WriteToQueue(SignalRConnector.LogLevel.Error, "Some Message");
+            publisher.WriteToQueue(SignalRConnector.LogLevel.Warn, "Some Message");
+            publisher.WriteToQueue(SignalRConnector.LogLevel.Info, "Some Message");
             Assert.IsTrue(publisher.NumberOfFunctionsToExecute == 4);
 
             publisher.Execute_StartProcessing();

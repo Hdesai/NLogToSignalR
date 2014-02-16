@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR.Client.Http;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
+using SignalRConnector;
 
 namespace NLog.Targets.SignalR.Tests
 {

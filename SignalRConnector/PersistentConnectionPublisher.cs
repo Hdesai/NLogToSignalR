@@ -3,7 +3,7 @@ using System.Diagnostics;
 using Microsoft.AspNet.SignalR.Client;
 using Microsoft.AspNet.SignalR.Client.Http;
 
-namespace NLog.Targets.SignalR
+namespace SignalRConnector
 {
     public class PersistentConnectionPublisher : PublisherBase, IPublishToSignalR
     {

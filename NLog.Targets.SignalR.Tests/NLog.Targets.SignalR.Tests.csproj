@@ -80,6 +80,10 @@
       <Project>{0330e25b-bb66-47f2-8f81-932b46f4246d}</Project>
       <Name>NLog.Targets.SignalR</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SignalRConnector\SignalRConnector.csproj">
+      <Project>{15ee7824-6b96-4380-8f7d-6eeef4a1127e}</Project>
+      <Name>SignalRConnector</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

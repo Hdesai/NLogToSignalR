@@ -2,10 +2,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR.Client;
 using Microsoft.AspNet.SignalR.Client.Http;
-using Microsoft.AspNet.SignalR.Client.Hubs;
 using Microsoft.AspNet.SignalR.Client.Transports;
 
-namespace NLog.Targets.SignalR
+namespace SignalRConnector
 {
     public class HubConnectionProxy:HubConnection,IHubConnectionProxy
     {

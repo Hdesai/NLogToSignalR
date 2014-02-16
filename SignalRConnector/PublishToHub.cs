@@ -1,10 +1,8 @@
 using System;
 using Microsoft.AspNet.SignalR.Client;
 using Microsoft.AspNet.SignalR.Client.Http;
-using Microsoft.AspNet.SignalR.Client.Hubs;
 
-
-namespace NLog.Targets.SignalR
+namespace SignalRConnector
 {
     public class PublishToHub : PublisherBase, IPublishToSignalR
     {
@@ -34,7 +32,7 @@ namespace NLog.Targets.SignalR
 
             if (_hubConnectionProxy.State != ConnectionState.Connected)
             {
-                throw new NLogToSignalRTargetException("Problem with connection");
+                throw new SignalRConnectorTargetException("Problem with connection");
             }
 
             //Let the base class know that you can start processing
@@ -46,7 +44,7 @@ namespace NLog.Targets.SignalR
         {
             if (_hubConnectionProxy.State != ConnectionState.Connected)
             {
-                throw new NLogToSignalRTargetException("Problem with connection");
+                throw new SignalRConnectorTargetException("Problem with connection");
             }
 
             Object[] myData = {message, _groupName};

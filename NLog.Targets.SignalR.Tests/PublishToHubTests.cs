@@ -5,6 +5,7 @@ using Microsoft.AspNet.SignalR.Client.Http;
 using Microsoft.AspNet.SignalR.Client.Hubs;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
+using SignalRConnector;
 
 namespace NLog.Targets.SignalR.Tests
 {
@@ -52,7 +53,7 @@ namespace NLog.Targets.SignalR.Tests
             {
                 hub.Connect(_httpClientMock);
             }
-            catch (NLogToSignalRTargetException)
+            catch (SignalRConnectorTargetException)
             {
             }
 
@@ -126,7 +127,7 @@ namespace NLog.Targets.SignalR.Tests
                 publisher.Execute_SendToSignalR(message);
                 Assert.Fail("Above line-Should have thrown exception");
             }
-            catch (NLogToSignalRTargetException)
+            catch (SignalRConnectorTargetException)
             {
               
             }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NLog.Targets.SignalR
+namespace SignalRConnector
 {
     public abstract class PublisherBase
     {
@@ -59,7 +59,7 @@ namespace NLog.Targets.SignalR
 
                     string allTexts = builder.ToString();
 
-                    var signalRMessage = new Message {Title = level.Name, Content = allTexts};
+                    var signalRMessage = new Message {Title = Enum.GetName(typeof(LogLevel),level), Content = allTexts};
 
                     if (level == LogLevel.Info)
                     {
