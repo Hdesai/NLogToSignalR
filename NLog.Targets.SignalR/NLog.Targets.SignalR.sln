@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLog.Targets.SignalR", "NLog.Targets.SignalR.csproj", "{0330E25B-BB66-47F2-8F81-932B46F4246D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nlog.Targets.SignalR.ConsoleSample", "..\Nlog.Targets.SignalR.ConsoleSample\Nlog.Targets.SignalR.ConsoleSample.csproj", "{0963547B-C278-455B-A656-5F96E7324F05}"
@@ -25,6 +27,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A192E3
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NugetPackage", "NugetPackage", "{1C12A3BF-E95A-4651-82FD-99D4FA7753EA}"
+	ProjectSection(SolutionItems) = preProject
+		..\NLog.Targets.SignalR.dll = ..\NLog.Targets.SignalR.dll
+		..\NLogToSignalR.2.0.3.nupkg = ..\NLogToSignalR.2.0.3.nupkg
 	EndProjectSection
 EndProject
 Global
