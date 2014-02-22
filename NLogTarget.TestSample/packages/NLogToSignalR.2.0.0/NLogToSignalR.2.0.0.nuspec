@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>NLogToSignalR</id>
+    <version>2.0.0</version>
+    <title>NLogToSignalR Target</title>
+    <authors>Himanshu Desai</authors>
+    <owners>Himanshu Desai</owners>
+    <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
+    <projectUrl>https://github.com/Hdesai/NLogToSignalR</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package enables you to send NLogs to remote server via signalR.</description>
+    <copyright>Copyright © 2012 Himanshu Desai</copyright>
+    <language>en-US</language>
+    <tags>SignalR,NLog</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="Microsoft.AspNet.SignalR.Client" version="2.0.0.0" />
+        <dependency id="Microsoft.AspNet.SignalR.Core" version="2.0.0.0" />
+        <dependency id="NLog" version="2.1.0.0" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>SignalRConnector</id>
+    <version>1.0.0</version>
+    <title>SignalR Connector</title>
+    <authors>Himanshu Desai</authors>
+    <owners>Himanshu Desai</owners>
+    <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
+    <projectUrl>https://github.com/hdesai/NLogToSignalR</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This is a prerequisite package which is used by NLogToSignalR and Log4NetToSignalR nuget package</description>
+    <copyright>Copyright 2012 Himanshu Desai</copyright>
+    <language>es-US</language>
+    <tags>SignalR</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="Microsoft.AspNet.SignalR.Client" version="2.0.0.0" />
+        <dependency id="Microsoft.AspNet.SignalR.Core" version="2.0.0.0" />
+        <dependency id="NLog" version="2.1.0.0" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
