@@ -76,7 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SignalRConnector\Message.cs">
+    <Compile Include="..\NLog.Targets.SignalR\NLog.Targets.SignalR.AspNetServer\SignalR.MessengerHub\Message.cs">
       <Link>Message.cs</Link>
     </Compile>
     <Compile Include="MyServerConnection.cs" />
