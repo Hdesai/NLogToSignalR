@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLog.Targets.SignalR.Tests"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D7304753-00C3-4A3D-8267-6AB172EAA396}"
 	ProjectSection(SolutionItems) = preProject
+		..\NLog.Targets.SignalR.dll = ..\NLog.Targets.SignalR.dll
+		..\NLogToSignalR.2.0.4.nupkg = ..\NLogToSignalR.2.0.4.nupkg
 		..\..\..\..\..\Users\a2d\Desktop\Readme.md = ..\..\..\..\..\Users\a2d\Desktop\Readme.md
 	EndProjectSection
 EndProject
@@ -30,10 +32,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A192E3
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NugetPackage", "NugetPackage", "{1C12A3BF-E95A-4651-82FD-99D4FA7753EA}"
-	ProjectSection(SolutionItems) = preProject
-		..\NLog.Targets.SignalR.dll = ..\NLog.Targets.SignalR.dll
-		..\NLogToSignalR.2.0.3.nupkg = ..\NLogToSignalR.2.0.3.nupkg
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>SignalRConnector</id>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <title>SignalR Connector</title>
     <authors>Himanshu Desai</authors>
     <owners>Himanshu Desai</owners>
@@ -17,7 +17,6 @@
       <group targetFramework=".NETFramework4.5">
         <dependency id="Microsoft.AspNet.SignalR.Client" version="2.0.0.0" />
         <dependency id="Microsoft.AspNet.SignalR.Core" version="2.0.0.0" />
-        <dependency id="NLog" version="2.1.0.0" />
       </group>
     </dependencies>
   </metadata>
