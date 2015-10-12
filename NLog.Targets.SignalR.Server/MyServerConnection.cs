@@ -17,12 +17,14 @@ namespace NLog.Targets.SignalR.SelfHostServer
             Console.WriteLine("{0} Connected", connectionId);
             return base.OnConnected(request, connectionId);
         }
-
-        protected override Task OnDisconnected(IRequest request, string connectionId)
+        
+        protected override Task OnDisconnected(IRequest request, string connectionId,bool stopCalled)
         {
             Console.WriteLine("{0} disconnected", connectionId);
-            return base.OnDisconnected(request, connectionId);
+            return base.OnDisconnected(request, connectionId,stopCalled);
         }
+
+       
 
         //protected override Task OnError(Exception error)
         //{
